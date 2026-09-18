@@ -1,0 +1,10 @@
+{
+    "model": "GradientBoostingRegressor",
+    "target": "travel_time_min",
+    "n_features": 53,
+    "mae": 1.3063973593255067,
+    "rmse": 1.9464353727493213,
+    "r2": 0.9774633400578511,
+    "training_samples": 1020,
+    "test_samples": 255
+}

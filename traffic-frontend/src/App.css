@@ -1,0 +1,598 @@
+/* =====================================================
+   GLOBAL
+===================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background: #f4f7fb;
+  color: #111827;
+}
+
+button,
+select {
+  font-family: inherit;
+}
+
+.app {
+  min-height: 100vh;
+}
+
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+
+.navbar {
+  height: 72px;
+
+  padding: 0 7%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background: #0f172a;
+
+  color: white;
+
+  border-bottom: 1px solid #1e293b;
+}
+
+.logo {
+  font-size: 21px;
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
+}
+
+.live-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 7px 12px;
+
+  border-radius: 20px;
+
+  background: rgba(34, 197, 94, 0.12);
+
+  color: #86efac;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: #22c55e;
+
+  box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.12);
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main-content {
+  width: min(1120px, 92%);
+
+  margin: 0 auto;
+
+  padding: 55px 0 80px;
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.main-content h1 {
+  margin: 0;
+
+  font-size: 38px;
+  font-weight: 750;
+
+  letter-spacing: -1.2px;
+
+  color: #0f172a;
+}
+
+.subtitle {
+  margin: 9px 0 34px;
+
+  color: #64748b;
+
+  font-size: 15px;
+}
+
+
+/* =====================================================
+   ROUTE CARD
+===================================================== */
+
+.route-card {
+  padding: 30px;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 10px rgba(15, 23, 42, 0.03),
+    0 15px 35px rgba(15, 23, 42, 0.04);
+}
+
+.route-card h2 {
+  margin: 0 0 26px;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  color: #0f172a;
+}
+
+
+/* =====================================================
+   ROUTE SELECTORS
+===================================================== */
+
+.route-selectors {
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+
+  gap: 20px;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-group label {
+  margin-bottom: 9px;
+
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.8px;
+}
+
+.select-group select {
+  width: 100%;
+
+  height: 50px;
+
+  padding: 0 15px;
+
+  border: 1px solid #cbd5e1;
+
+  border-radius: 10px;
+
+  background: #f8fafc;
+
+  color: #0f172a;
+
+  font-size: 14px;
+
+  cursor: pointer;
+
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.select-group select:hover {
+  background: white;
+
+  border-color: #94a3b8;
+}
+
+.select-group select:focus {
+  outline: none;
+
+  background: white;
+
+  border-color: #2563eb;
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+
+/* =====================================================
+   DISTANCE
+===================================================== */
+
+.distance-info {
+  margin-top: 22px;
+
+  padding-top: 18px;
+
+  border-top: 1px solid #eef2f7;
+
+  color: #64748b;
+
+  font-size: 14px;
+}
+
+.distance-info strong {
+  margin-left: 5px;
+
+  color: #0f172a;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   WARNING
+===================================================== */
+
+.route-warning {
+  margin: 18px 0 0;
+
+  padding: 11px 14px;
+
+  border-radius: 9px;
+
+  background: #fff7ed;
+
+  border: 1px solid #fed7aa;
+
+  color: #c2410c;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   ROUTE RESULT
+===================================================== */
+
+.route-result {
+  margin-top: 24px;
+}
+
+
+/* =====================================================
+   LOADING
+===================================================== */
+
+.prediction-status {
+  margin-top: 24px;
+
+  padding: 22px 25px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  background: white;
+
+  border: 1px solid #e2e8f0;
+
+  border-radius: 16px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.03);
+}
+
+.prediction-status p {
+  margin: 0;
+
+  color: #475569;
+
+  font-size: 14px;
+
+  font-weight: 500;
+}
+
+
+/* =====================================================
+   ERROR
+===================================================== */
+
+.prediction-error {
+  margin-top: 24px;
+
+  padding: 15px 18px;
+
+  border-radius: 10px;
+
+  background: #fef2f2;
+
+  border: 1px solid #fecaca;
+
+  color: #b91c1c;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   ETA CARD
+===================================================== */
+
+.eta-card {
+  margin-top: 24px;
+
+  padding: 32px;
+
+  background: white;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 5px 15px rgba(15, 23, 42, 0.04),
+    0 20px 40px rgba(15, 23, 42, 0.05);
+}
+
+.eta-header {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+.eta-header span {
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+
+/* =====================================================
+   ETA MAIN
+===================================================== */
+
+.eta-main {
+  margin-top: 15px;
+}
+
+.eta-value {
+  color: #0f172a;
+
+  font-size: 48px;
+
+  font-weight: 750;
+
+  line-height: 1;
+
+  letter-spacing: -1.5px;
+}
+
+.eta-label {
+  margin-top: 8px;
+
+  color: #64748b;
+
+  font-size: 13px;
+}
+
+
+/* =====================================================
+   ETA DETAILS
+===================================================== */
+
+.eta-details {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+
+  margin-top: 30px;
+
+  padding-top: 24px;
+
+  border-top: 1px solid #eef2f7;
+}
+
+.eta-detail {
+  padding-right: 20px;
+
+  border-right: 1px solid #eef2f7;
+}
+
+.eta-detail:last-child {
+  border-right: none;
+
+  padding-left: 20px;
+}
+
+.eta-detail:nth-child(2) {
+  padding-left: 20px;
+}
+
+.eta-detail span {
+  display: block;
+
+  margin-bottom: 8px;
+
+  color: #64748b;
+
+  font-size: 12px;
+}
+
+.eta-detail strong {
+  color: #0f172a;
+
+  font-size: 17px;
+
+  font-weight: 700;
+}
+
+
+/* =====================================================
+   TRAFFIC CARD
+===================================================== */
+
+.traffic-card {
+  margin-top: 24px;
+
+  padding: 25px 28px;
+
+  background: white;
+
+  border: 1px solid #dbe3ef;
+
+  border-radius: 18px;
+
+  box-shadow:
+    0 4px 15px rgba(15, 23, 42, 0.035);
+}
+
+.traffic-header span {
+  color: #64748b;
+
+  font-size: 11px;
+
+  font-weight: 700;
+
+  letter-spacing: 1px;
+}
+
+.traffic-content {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  margin-top: 18px;
+}
+
+.traffic-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 13px;
+
+  background: #eff6ff;
+
+  font-size: 25px;
+}
+
+.traffic-content h3 {
+  margin: 0 0 5px;
+
+  color: #0f172a;
+
+  font-size: 16px;
+
+  font-weight: 700;
+}
+
+.traffic-content p {
+  margin: 0;
+
+  color: #64748b;
+
+  font-size: 13px;
+
+  line-height: 1.5;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .main-content {
+    width: 92%;
+
+    padding-top: 35px;
+  }
+
+  .main-content h1 {
+    font-size: 30px;
+  }
+
+  .route-selectors {
+    grid-template-columns: 1fr;
+  }
+
+  .eta-details {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+  }
+
+  .eta-detail,
+  .eta-detail:nth-child(2),
+  .eta-detail:last-child {
+    padding: 0;
+
+    border-right: none;
+  }
+
+  .eta-value {
+    font-size: 40px;
+  }
+}
+
+
+@media (max-width: 480px) {
+
+  .route-card,
+  .eta-card,
+  .traffic-card {
+    padding: 22px;
+  }
+
+  .navbar {
+    height: 64px;
+  }
+
+  .logo {
+    font-size: 17px;
+  }
+
+  .live-status {
+    font-size: 10px;
+  }
+
+}
