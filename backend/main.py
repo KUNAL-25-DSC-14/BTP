@@ -442,7 +442,7 @@ def prepare_model_input(input_data):
     # ------------------------------------------------------
 
     input_encoded = pd.DataFrame(
-        0,
+        0.0,
         index=[0],
         columns=model_features
     )
