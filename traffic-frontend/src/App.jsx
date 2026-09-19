@@ -388,7 +388,7 @@ function App() {
       <nav className="navbar">
 
         <div className="logo">
-          Bangalore Traffic AI
+          Bangalore Traffic Prediction
         </div>
 
 
@@ -593,7 +593,7 @@ function App() {
           <div className="prediction-status">
 
             <p>
-              Fetching live traffic and weather data...
+              Fetching live traffic and weather data...(First time can take time)
             </p>
 
           </div>
