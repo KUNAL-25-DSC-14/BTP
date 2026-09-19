@@ -129,20 +129,29 @@ app = FastAPI(
 # CORS CONFIGURATION
 # ==========================================================
 
-app.add_middleware(
+ app.add_middleware(
     CORSMiddleware,
-
     allow_origins=[
         "http://localhost:5173",
-        "http://127.0.0.1:5173"
+        "http://127.0.0.1:5173",
+        "https://backend-sable-alpha-67.vercel.app"
     ],
-
     allow_credentials=True,
-
     allow_methods=["*"],
-
     allow_headers=["*"],
 )
+
+
+
+
+
+
+
+
+
+
+
+
 # ==========================================================
 # PART 4 — INPUT SCHEMA
 # ==========================================================
